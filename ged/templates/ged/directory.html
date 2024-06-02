@@ -1,0 +1,16 @@
+<!-- add_directory.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Directory</title>
+</head>
+<body>
+    <h1>Add Directory</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'directory_list' %}">Back to Directories</a>
+</body>
+</html>

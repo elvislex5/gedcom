@@ -1,0 +1,16 @@
+<!-- add_subdirectory.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Subdirectory</title>
+</head>
+<body>
+    <h1>Add Subdirectory to {{ parent_directory.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'directory_detail' parent_directory.pk %}">Back to Directory</a>
+</body>
+</html>
