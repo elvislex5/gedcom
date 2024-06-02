@@ -4,58 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06b3cd8a-857c-43aa-bb28-c2ed1b0aae69" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gedcom.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/css/style-liberty.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/counter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/owl.carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/js/theme-change.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/static/ged/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/children.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/directory.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/document.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gedcom/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gedcom/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gedcom/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gedcom/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gedcom/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style-liberty.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="06b3cd8a-857c-43aa-bb28-c2ed1b0aae69" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717276666806</updated>
       <workItem from="1717276676687" duration="528000" />
-      <workItem from="1717277239463" duration="31268000" />
+      <workItem from="1717277239463" duration="31719000" />
     </task>
     <servers />
   </component>
