@@ -56,7 +56,8 @@ def add_directory(request):
 
 @login_required
 def add_subdirectory(request, pk):
-    parent_directory = get_object_or_404(Directory, pk=pk)
+    parent_directory = get_object_or_404(Directory, pk
+    =pk)
     if request.method == 'POST':
         form = DirectoryForm(request.POST)
         if form.is_valid():
