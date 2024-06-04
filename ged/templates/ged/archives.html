@@ -4,30 +4,6 @@
 <body>
 {% block content %}
     <!-- Main Content Section -->
-
-            <div class="col-md-9">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Dossiers</th>
-                            <th>Date d'Archivage</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for document in archived_docs %}
-                            <tr>
-                                <td>{{ document.name }}</td>
-                                <td>{{ document.archived_at }}</td>
-                            </tr>
-                        {% empty %}
-                            <tr>
-                                <td colspan="3" class="text-center">Aucun document archivé trouvé.</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
     <div class="col-md-9">
         <h1 class="text-center">Documents Archivés</h1><br>
         <table class="table table-striped">
@@ -79,7 +55,6 @@
             </tbody>
         </table>
     </div>
-
 {% endblock content %}
 </body>
 </html>
