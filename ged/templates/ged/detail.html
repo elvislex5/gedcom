@@ -2,52 +2,79 @@
 
 {% block content %}
     <!-- Main Content Section -->
-            <div class="col-md-9">
-                <h1 class="text-center">Liste des dossiers</h1><br>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Owner</th>
-                            <th>Last Modified</th>
-                            <th>Size</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for subdirectory in subdirectories %}
-                            <tr>
-                                <td>
-                                    <i class="fa fa-folder"></i>
-                                    <a href="{% url 'directory_detail' subdirectory.id %}">{{ subdirectory.name }}</a>
-                                </td>
-                                <td>{{ subdirectory.owner.username }}</td>
-                                <td>{{ subdirectory.last_modified }}</td>
-                                <td>{{ subdirectory.size }} bytes</td>
-                            </tr>
-                        {% endfor %}
-                        <!-- Affichage des fichiers -->
-                        {% for document in documents %}
-                            <tr>
-                                <td>
-                                    <i class="fas fa-file-alt"></i>
-                                    <a href="{{ document.file.url }}">{{ document.name }}</a>
-                                </td>
-                                <td>{{ document.owner.username }}</td>
-                                <td>{{ document.uploaded_at }}</td>
-                                <td>{{ document.file_size }} bytes</td>
-                                <td>
-                                    <a href="{% url 'archive_document' document.id %}" class="btn btn-danger">
-                                        <i class="fa fa-archive"></i>
+    <div class="col-md-9">
+        <h1 class="text-center">Liste des dossiers</h1><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Dossiers</th>
+                    <th>Propriétaire</th>
+                    <th>Modifier le</th>
+                    <th>Taille</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subdirectory in subdirectories %}
+                    <tr>
+                        <td>
+                            <i class="fa fa-folder"></i>
+                            <a href="{% url 'directory_detail' subdirectory.id %}">{{ subdirectory.name }}</a>
+                        </td>
+                        <td>{{ subdirectory.owner.username }}</td>
+                        <td>{{ subdirectory.last_modified }}</td>
+                        <td>{{ subdirectory.size }} bytes</td>
+                        <td class="text-center">
+                            <div class="dropdown d-inline">
+                                <style>
+                                    /* Style pour l'effet de survol */
+                                    .dropdown-toggle .fa-ellipsis-v {
+                                        transition: transform 0.3s ease-in-out;
+                                        font-size: 1.2rem; /* Augmenter légèrement la taille */
+                                    }
+
+                                    .dropdown-toggle:hover .fa-ellipsis-v {
+                                        transform: scale(1.2);
+                                    }
+                                </style>
+                                <span class="dropdown-toggle" id="dropdownMenuButton{{ subdirectory.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </span>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton{{ subdirectory.id }}">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-edit text-primary"></i> Modifier
                                     </a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-{% endblock %}
-<div>
-        <a href="{% url 'add_subdirectory' directory.id %}" class="btn btn-primary">Add Subdirectory</a>
-        <a href="{% url 'add_document' directory.id %}" class="btn btn-secondary">Add Document</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-trash text-danger"></i> Supprimer
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-share-alt text-warning"></i> Partager
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                <!-- Affichage des fichiers -->
+                {% for document in documents %}
+                    <tr>
+                        <td>
+                            <i class="fas fa-file-alt"></i>
+                            <a href="{{ document.file.url }}">{{ document.name }}</a>
+                        </td>
+                        <td>{{ document.owner.username }}</td>
+                        <td>{{ document.uploaded_at }}</td>
+                        <td>{{ document.file_size }} bytes</td>
+                        <td class="text-center">
+                            <a href="{% url 'archive_document' document.id %}" class="btn btn-danger">
+                                <i class="fa fa-archive"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+{% endblock %}
