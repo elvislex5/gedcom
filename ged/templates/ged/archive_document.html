@@ -1,0 +1,10 @@
+<!-- archive_document.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Confirmer l'archivage du document "{{ document.name }}"</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Archiver</button>
+  </form>
+{% endblock %}

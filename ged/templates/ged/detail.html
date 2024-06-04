@@ -1,47 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <br><br><br>
-<div class="container mt-5 pt-5">
-    <h1>{{ directory.name }}</h1><br>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Owner</th>
-                <th>Last Modified</th>
-                <th>Size</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for subdirectory in subdirectories %}
-                <tr>
-                    <td>
-                        <i class="fa fa-folder"></i>
-                        <a href="{% url 'directory_detail' subdirectory.id %}">{{ subdirectory.name }}</a>
-                    </td>
-                    <td>{{ subdirectory.owner.username }}</td>
-                    <td>{{ subdirectory.last_modified }}</td>
-                    <td>{{ subdirectory.size }} bytes</td>
-                </tr>
-            {% endfor %}
-         <!-- Affichage des fichiers -->
-                {% for document in documents %}
-                    <tr>
-                        <td>
-                            <i class="fas fa-file-alt"></i>
-                            <a href="{{ document.file.url }}">{{ document.name }}</a>
-                        </td>
-                        <td>{{ document.owner.username }}</td>
-                        <td>{{ document.last_modified }}</td>
-                        <td>{{ document.size }} bytes</td>
-                    </tr>
-                {% endfor %}
-        </tbody>
-    </table>
-
-</div>
+    <!-- Main Content Section -->
+            <div class="col-md-9">
+                <h1 class="text-center">Liste des dossiers</h1><br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Last Modified</th>
+                            <th>Size</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for subdirectory in subdirectories %}
+                            <tr>
+                                <td>
+                                    <i class="fa fa-folder"></i>
+                                    <a href="{% url 'directory_detail' subdirectory.id %}">{{ subdirectory.name }}</a>
+                                </td>
+                                <td>{{ subdirectory.owner.username }}</td>
+                                <td>{{ subdirectory.last_modified }}</td>
+                                <td>{{ subdirectory.size }} bytes</td>
+                            </tr>
+                        {% endfor %}
+                        <!-- Affichage des fichiers -->
+                        {% for document in documents %}
+                            <tr>
+                                <td>
+                                    <i class="fas fa-file-alt"></i>
+                                    <a href="{{ document.file.url }}">{{ document.name }}</a>
+                                </td>
+                                <td>{{ document.owner.username }}</td>
+                                <td>{{ document.uploaded_at }}</td>
+                                <td>{{ document.file_size }} bytes</td>
+                                <td>
+                                    <a href="{% url 'archive_document' document.id %}" class="btn btn-danger">
+                                        <i class="fa fa-archive"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 {% endblock %}
 <div>
         <a href="{% url 'add_subdirectory' directory.id %}" class="btn btn-primary">Add Subdirectory</a>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<!-- directory_list.html -->
+
+<body>
+{% block content %}
+    <!-- Main Content Section -->
+            <div class="col-md-9">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Uploaded_at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for document in archived_docs %}
+                            <tr>
+                                <td>{{ document.name }}</td>
+                                <td>{{ document.uploaded_at }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="3" class="text-center">Aucun document archivé trouvé.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+{% endblock content %}
+</body>
+</html>

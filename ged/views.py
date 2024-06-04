@@ -1,9 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.db import models
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
-from .models import Directory, Document
+from .models import Directory, Document, ArchiveDocument
 from .forms import DirectoryForm, DocumentForm, ConnexionForm
 
 
@@ -45,7 +46,9 @@ def add_directory(request):
     if request.method == 'POST':
         form = DirectoryForm(request.POST)
         if form.is_valid():
-            form.save()
+            directory = form.save(commit=False)
+            directory.owner = request.user
+            directory.save()
             return redirect('directory_list')
     else:
         form = DirectoryForm()
@@ -69,15 +72,43 @@ def add_subdirectory(request, pk):
     })
 
 @login_required
-def add_document(request, pk):
-    directory = get_object_or_404(Directory, pk=pk)
+def add_document(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             document = form.save(commit=False)
-            document.directory = directory
             document.save()
-            return redirect('directory_detail', pk=directory.pk)
+            return redirect('directory_detail', pk=document.directory.pk)
     else:
         form = DocumentForm()
-    return render(request, 'ged/document.html', {'form': form, 'directory': directory})
+    return render(request, 'ged/document.html', {'form': form})
+
+def statistics(request):
+    total_directories = Directory.objects.count()
+    total_documents = Document.objects.count()
+    total_size = Document.objects.aggregate(total_size=models.Sum('file'))['total_size'] or 0
+
+    context = {
+        'total_directories': total_directories,
+        'total_documents': total_documents,
+        'total_size': total_size,
+    }
+    return render(request, 'ged/statistics.html', context)
+
+@login_required()
+def archive_document(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    if request.method == 'POST':
+        archived_document = ArchiveDocument.objects.create(
+            name = document.name,
+            file = document.file,
+            archived_by = request.user
+        )
+        document.delete()
+        return redirect('directory_detail', pk=document.directory.pk)
+    return render(request, 'ged/archive_document.html', {'document': document})
+
+@login_required()
+def archived_documents(request):
+    archived_docs = Document.objects.filter(archived=True)
+    return render(request, 'ged/archives.html', {'archived_docs': archived_docs})

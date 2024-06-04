@@ -3,35 +3,41 @@
 
 <body>
 {% block content %}
-    <br><br><br>
-    <div class="container mt-5 pt-5">
-        <h1 class="text-center">Liste des dossiers</h1><br>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Owner</th>
-                    <th>Last Modified</th>
-                    <th>Size</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for directory in directories %}
-                    <tr>
-                        <td>
-                            <i class="fa fa-folder"></i>
-                            <a href="{% url 'directory_detail' directory.id %}">{{ directory.name }}</a>
-                        </td>
-                        <td>{{ directory.owner.username }}</td>
-                        <td>{{ directory.last_modified }}</td>
-                        <td>{{ directory.size }} bytes</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
+    <!-- Main Content Section -->
+            <div class="col-md-9">
+                 <!-- Upload File Section -->
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <a href="{% url 'add_document' %}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-file-upload"></i> Upload File
+                        </a>
+                    </div>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Last Modified</th>
+                            <th>Size</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for directory in directories %}
+                            <tr>
+                                <td>
+                                    <i class="fa fa-folder"></i>
+                                    <a href="{% url 'directory_detail' directory.id %}">{{ directory.name }}</a>
+                                </td>
+                                <td>{{ directory.owner.username }}</td>
+                                <td>{{ directory.last_modified }}</td>
+                                <td>{{ directory.size }} bytes</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 {% endblock content %}
 </body>
 </html>

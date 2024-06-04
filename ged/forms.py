@@ -18,4 +18,6 @@ class DirectoryForm(forms.ModelForm):
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
-        fields = ['name', 'file']
+        fields = ['name', 'file', 'directory']
+
+    directory = forms.ModelChoiceField(queryset=Directory.objects.all(), required=True)

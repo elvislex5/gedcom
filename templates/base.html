@@ -47,12 +47,49 @@
         </div>
     </header>
     <!--//header-->
-{% block content %}
+    <br><br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <!-- Aside Section -->
+            <aside class="col-md-3">
+                <div class="aside-content">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="dropdown">
+                              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-plus"></i>   Nouveau
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{% url 'add_directory' %}"><i class="fas fa-folder-plus"></i> Nouveau dossier</a>
+                                <a class="dropdown-item" href="{% url 'add_document' %}"><i class="fas fa-file"></i> Importer fichier</a>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-home"></i>
+                            <a href="{% url 'directory_list' %}">Accueil</a>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <a href="{% url 'statistics' %}">Statistiques</a>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-archive"></i>
+                            <a href="{% url 'archived_documents' %}">Archive</a>
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-trash"></i>
+                            <a href="#">Corbeille</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            {% block content %}
 
-{% endblock content %}
-<footer>
-    <p>&copy; 2024 Document Management System</p>
-</footer>
+            {% endblock content %}
+        </div>
+    </div>
+    
 <!-- Js scripts -->
     <!-- move top -->
     <button onclick="topFunction()" id="movetop" title="Go to top">
@@ -209,6 +246,18 @@
     <script src="{% static 'ged/js/bootstrap.min.js' %}"></script>
     <!-- //bootstrap -->
     <!-- //Js scripts -->
+
+<!-- jQuery -->
+{#<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>#}
+    <script src="{% static 'ged/js/jquery-3.3.1.slim.min.js' %}"></script>
+
+<!-- Popper.js -->
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>#}
+    <script src="{% static 'ged/js/popper.min.js' %}"></script>
+
+<!-- Bootstrap JS -->
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>#}
+<script src="{% static 'ged/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
 

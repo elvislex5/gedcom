@@ -2,15 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Document</title>
+    <title>Importer un document</title>
 </head>
 <body>
-    <h1>Add Document to {{ directory.name }}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save</button>
+        <button type="submit">Sauvegarder</button>
     </form>
-    <a href="{% url 'directory_detail' directory.pk %}">Back to Directory</a>
 </body>
 </html>
