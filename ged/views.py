@@ -111,5 +111,5 @@ def archive_document(request, pk):
 
 @login_required()
 def archived_documents(request):
-    archived_docs = Document.objects.filter(archived=True)
+    archived_docs = ArchiveDocument.objects.all()
     return render(request, 'ged/archives.html', {'archived_docs': archived_docs})
