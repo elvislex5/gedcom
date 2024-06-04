@@ -29,7 +29,6 @@ class Document(models.Model):
 class ArchiveDocument(models.Model):
     name = models.CharField(max_length=100)
     file = models.FileField(upload_to='archives/')
-    uploaded_at = models.DateTimeField(auto_now_add=True)
     archived_at = models.DateTimeField(auto_now_add=True)
     archived_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
