@@ -4,29 +4,57 @@
 <body>
 {% block content %}
     <!-- Main Content Section -->
-            <div class="col-md-9">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Dossiers</th>
-                            <th>Date d'Archivage</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for document in archived_docs %}
-                            <tr>
-                                <td>{{ document.name }}</td>
-                                <td>{{ document.uploaded_at }}</td>
-                            </tr>
-                        {% empty %}
-                            <tr>
-                                <td colspan="3" class="text-center">Aucun document archivé trouvé.</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+    <div class="col-md-9">
+        <h1 class="text-center">Documents Archivés</h1><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Date d'Archivage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for document in archived_docs %}
+                    <tr>
+                        <td>{{ document.name }}</td>
+                        <td>{{ document.uploaded_at }}</td>
+                        <td>
+                            <div class="dropdown d-inline">
+                                <style>
+                                    /* Style pour l'effet de survol */
+                                    .dropdown-toggle .fa-ellipsis-v {
+                                        transition: transform 0.3s ease-in-out;
+                                        font-size: 1.2rem; /* Augmenter légèrement la taille */
+                                    }
+
+                                    .dropdown-toggle:hover .fa-ellipsis-v {
+                                        transform: scale(1.2);
+                                    }
+                                </style>
+                                <span class="dropdown-toggle" id="dropdownMenuButton{{ document.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v text-secondary"></i> <!-- Appliquer la couleur grise -->
+                                </span>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton{{ document.id }}">
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-trash text-danger"></i> Supprimer
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-undo text-primary"></i> Restaurer
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center">Aucun document archivé trouvé.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock content %}
 </body>
 </html>
