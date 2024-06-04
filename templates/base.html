@@ -56,13 +56,64 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="dropdown">
-                              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-plus"></i>   Nouveau
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{% url 'add_directory' %}"><i class="fas fa-folder-plus"></i> Nouveau dossier</a>
-                                <a class="dropdown-item" href="{% url 'add_document' %}"><i class="fas fa-file"></i> Importer fichier</a>
-                              </div>
+                              <!-- Button trigger modal for "Nouveau dossier" -->
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#addDirectoryModal">
+    <i class="fas fa-plus"></i> Nouveau dossier
+  </button>
+  
+  <!-- Modal for "Nouveau dossier" -->
+  <div class="modal fade" id="addDirectoryModal" tabindex="-1" role="dialog" aria-labelledby="addDirectoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addDirectoryModalLabel">Ajouter un Dossier</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{% url 'add_directory' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="directory_name">Nom du dossier:</label>
+              <input type="text" class="form-control" id="directory_name" name="directory_name">
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Button trigger modal for "Importer fichier" -->
+  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#importFileModal">
+    <i class="fas fa-file-upload"></i> Importer fichier
+  </button>
+  
+  <!-- Modal for "Importer fichier" -->
+  <div class="modal fade" id="importFileModal" tabindex="-1" role="dialog" aria-labelledby="importFileModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="importFileModalLabel">Importer un Fichier</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="#" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="file">Sélectionner un fichier:</label>
+              <input type="file" class="form-control-file" id="file" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">Importer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
                             </div>
                         </li>
                         <li class="list-group-item">
