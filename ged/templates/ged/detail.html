@@ -45,12 +45,12 @@
                                         <i class="fas fa-edit text-primary"></i> Modifier
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{% url 'delete_subdirectory' subdirectory.id %}">
                                         <i class="fas fa-trash text-danger"></i> Supprimer
                                     </a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">
-                                        <i class="fas fa-share-alt text-warning"></i> Partager
+                                        <i class="fas fa-share-alt text-warning"></i> Archiver
                                     </a>
                                 </div>
                             </div>
@@ -68,9 +68,36 @@
                         <td>{{ document.uploaded_at }}</td>
                         <td>{{ document.file_size }} bytes</td>
                         <td class="text-center">
-                            <a href="{% url 'archive_document' document.id %}" class="btn btn-danger">
-                                <i class="fa fa-archive"></i>
-                            </a>
+                            <div class="dropdown d-inline">
+                                <style>
+                                    /* Style pour l'effet de survol */
+                                    .dropdown-toggle .fa-ellipsis-v {
+                                        transition: transform 0.3s ease-in-out;
+                                        font-size: 1.2rem; /* Augmenter légèrement la taille */
+                                    }
+
+                                    .dropdown-toggle:hover .fa-ellipsis-v {
+                                        transform: scale(1.2);
+                                    }
+                                </style>
+                                <span class="dropdown-toggle" id="dropdownMenuButton{{ subdirectory.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </span>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton{{ subdirectory.id }}">
+                                    <a class="dropdown-item" href="{% url 'edit_document' document.id %}">
+                                        <i class="fas fa-edit text-primary"></i> Modifier
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'delete_document' document.id %}">
+                                        <i class="fas fa-trash text-danger"></i> Supprimer
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'archive_document' document.id %}">
+                                        <i class="fa fa-archive"></i>Archiver
+                                    </a>
+
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}

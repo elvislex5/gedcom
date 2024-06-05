@@ -113,3 +113,46 @@ def archive_document(request, pk):
 def archived_documents(request):
     archived_docs = ArchiveDocument.objects.all()
     return render(request, 'ged/archives.html', {'archived_docs': archived_docs})
+
+@login_required
+def delete_directory(request, pk):
+    directory = get_object_or_404(Directory, pk=pk)
+    if request.method == 'POST':
+        parent_directory = directory.parent
+        directory.delete()
+        if parent_directory:
+            return redirect('directory_detail', pk=parent_directory.pk)
+        else:
+            return redirect('directory_list')
+    return render(request, 'ged/delete.html', {'object': directory, 'type': 'directory'})
+
+@login_required
+def delete_document(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    if request.method == 'POST':
+        directory_id = document.directory.pk
+        document.delete()
+        return redirect('directory_detail', pk=directory_id)
+    return render(request, 'ged/delete.html', {'object': document, 'type': 'document'})
+
+@login_required
+def delete_subdirectory(request, pk):
+    subdirectory = get_object_or_404(Directory, pk=pk)
+    if request.method == 'POST':
+        parent_directory = subdirectory.parent
+        subdirectory.delete()
+        return redirect('directory_detail', pk=parent_directory.pk)
+    return render(request, 'ged/delete.html', {'object': subdirectory, 'type': 'subdirectory'})
+
+
+@login_required
+def edit_document(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES, instance=document)
+        if form.is_valid():
+            form.save()
+            return redirect('directory_detail', pk=document.directory.pk)
+    else:
+        form = DocumentForm(instance=document)
+    return render(request, 'ged/edit_document.html', {'form': form, 'document': document})

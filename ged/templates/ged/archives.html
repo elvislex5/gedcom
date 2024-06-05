@@ -36,7 +36,7 @@
                                 </span>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton{{ document.id }}">
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{% url 'delete_document' document.id %}">
                                         <i class="fas fa-trash text-danger"></i> Supprimer
                                     </a>
                                     <div class="dropdown-divider"></div>
