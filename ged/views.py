@@ -82,7 +82,7 @@ def add_document(request):
             return redirect('directory_detail', pk=document.directory.pk)
     else:
         form = DocumentForm()
-    return render(request, 'ged/document.html', {'form': form})
+    return render(request, 'ged/list.html', {'form': form})
 
 def statistics(request):
     total_directories = Directory.objects.count()
