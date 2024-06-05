@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b3cd8a-857c-43aa-bb28-c2ed1b0aae69" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/ged/templates/ged/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ged/migrations/0011_remove_document_file_size_archivedocument_directory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ged/templates/ged/restore.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ged/templates/ged/resultat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/documents/Logistique_3A-23-24_CFsPGh9.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/documents/Logistique_3A-23-24_Llw7A14.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/documents/Logistique_3A-23-24_b9nPCch.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/documents/exemples_-ch-II-kuziack-_king_VjVDuLv.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/migrations/0010_remove_archivedocument_uploaded_at.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/migrations/0010_remove_archivedocument_uploaded_at.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/static/ged/css/style-liberty.css" beforeDir="false" afterPath="$PROJECT_DIR$/ged/static/ged/css/style-liberty.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/templates/ged/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/archives.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/templates/ged/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/templates/ged/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/directory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/templates/ged/document.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/document.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/templates/ged/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/statistics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ged/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ged/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style-liberty.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style-liberty.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -7,6 +7,6 @@
   <form method="post">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Confirmer</button>
-    <a href="{% if type == 'directory' and object.parent %}{% url 'directory_detail' object.parent.pk %}{% elif type == 'directory' %}{% url 'directory_list' %}{% elif type == 'subdirectory' %}{% url 'directory_detail' object.parent.pk %}{% else %}{% url 'directory_detail' object.directory.pk %}{% endif %}" class="btn btn-secondary">Annuler</a>
+    <a href="{% if type == 'directory' and object.parent %}{% url 'directory_detail' object.parent.pk %}{% elif type == 'directory' %}{% url 'directory_list' %}{% elif type == 'subdirectory' %}{% url 'directory_detail' object.parent.pk %}{% elif type == 'archived_document' %}{% url 'archived_documents' %}{% else %}{% url 'directory_detail' object.directory.pk %}{% endif %}" class="btn btn-secondary">Annuler</a>
   </form>
 {% endblock %}

@@ -11037,7 +11037,7 @@ a.text-dark:focus {
 }
 
 [data-theme="dark"] {
-  --primary-color: #ff3c41;
+  --primary-color: #060606;
   --secondary-color: #47cf73;
   --font-color: #b7b7b7;
   --bg-color: #171717;
@@ -18027,7 +18027,7 @@ div#small-dialog iframe {
   color: #fff;
   width: 40px;
   height: 40px;
-  background: var(--primary-color);
+  background: var(--heading-color);
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;

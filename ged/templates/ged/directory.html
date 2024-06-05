@@ -1,20 +1,23 @@
-{% load static%}
-<!-- add_directory.html -->
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ajouter un Dossier</title>
-</head>
-<body>
-    <h1>Ajouter un Dossier</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enregistrer</button>
-    </form>
-    <a href="{% url 'directory_list' %}">Retour</a>
-</body>
-</html>
-{% endblock%}
+<div class="col-md-9">
+    <!-- Upload File Section -->
+    <div class="card mb-4">
+        <div class="card-header text-white text-center">
+            <h3 class="mb-0 fas fa-folder">Ajouter un Dossier</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn bg-warning btn-sm">Enregistrer</button>
+                    <a href="{% url 'directory_list' %}" class="btn bg-dark text-light btn-sm">Retour</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

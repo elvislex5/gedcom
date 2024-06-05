@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Confirmer la restauration</h1>
+  <p>Êtes-vous sûr de vouloir restaurer ce {{ type }} ?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Restaurer</button>
+    <a href="{% url 'archived_documents' %}" class="btn btn-secondary">Annuler</a>
+  </form>
+{% endblock %}

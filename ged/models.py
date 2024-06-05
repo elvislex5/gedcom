@@ -20,7 +20,6 @@ class Document(models.Model):
     file = models.FileField(upload_to='documents/')
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    file_size = models.IntegerField(default=0)
     archived = models.BooleanField(default=False)
 
     def __str__(self):
@@ -31,6 +30,8 @@ class ArchiveDocument(models.Model):
     file = models.FileField(upload_to='archives/')
     archived_at = models.DateTimeField(auto_now_add=True)
     archived_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    directory = models.ForeignKey(Directory, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name

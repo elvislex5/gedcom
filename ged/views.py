@@ -78,11 +78,12 @@ def add_document(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             document = form.save(commit=False)
+            document.owner = request.user  # Ajoutez cette ligne pour définir le propriétaire du document
             document.save()
             return redirect('directory_detail', pk=document.directory.pk)
     else:
         form = DocumentForm()
-    return render(request, 'ged/list.html', {'form': form})
+    return render(request, 'ged/document.html', {'form': form})
 
 def statistics(request):
     total_directories = Directory.objects.count()
@@ -92,18 +93,19 @@ def statistics(request):
     context = {
         'total_directories': total_directories,
         'total_documents': total_documents,
-        'total_size': total_size,
     }
     return render(request, 'ged/statistics.html', context)
 
 @login_required()
-def archive_document(request, pk):
+def archive_document(request, pk, document=None):
     document = get_object_or_404(Document, pk=pk)
     if request.method == 'POST':
         archived_document = ArchiveDocument.objects.create(
             name = document.name,
             file = document.file,
-            archived_by = request.user
+            archived_by = request.user,
+            directory = document.directory
+
         )
         document.delete()
         return redirect('directory_detail', pk=document.directory.pk)
@@ -156,3 +158,35 @@ def edit_document(request, pk):
     else:
         form = DocumentForm(instance=document)
     return render(request, 'ged/edit_document.html', {'form': form, 'document': document})
+
+@login_required
+def delete_archived_document(request, pk):
+    archived_document = get_object_or_404(ArchiveDocument, pk=pk)
+    if request.method == 'POST':
+        archived_document.delete()
+        return redirect('archived_documents')
+    return render(request, 'ged/delete.html', {'object': archived_document, 'type': 'archived_document'})
+
+@login_required
+def restore_archived_document(request, pk):
+    archived_document = get_object_or_404(ArchiveDocument, pk=pk)
+    if request.method == 'POST':
+        restored_document = Document.objects.create(
+            name=archived_document.name,
+            file=archived_document.file,
+            directory=archived_document.directory,
+            owner=request.user  # Assurez-vous d'ajouter le champ owner
+        )
+        archived_document.delete()
+        return redirect('directory_detail', pk=restored_document.directory.pk)
+    return render(request, 'ged/restore.html', {'object': archived_document, 'type': 'archived_document'})
+
+
+def search(request):
+    query = request.GET.get('q')
+    directory_results = Directory.objects.filter(name__icontains=query)
+    document_results = Document.objects.filter(name__icontains=query)
+
+    search_results = list(directory_results) + list(document_results)
+
+    return render(request, 'base.html', {'results': search_results, 'query': query})

@@ -35,7 +35,7 @@
                 <!-- search button -->
                 <div class="search-right ml-lg-3">
                     <div class="search-container">
-                        <form action="/search" method="get">
+                        <form action="{% url 'search' %}" method="get">
                             <input class="search expandright" id="searchright" type="search" name="q"
                                 placeholder="Search">
                             <label class="button searchbutton" for="searchright"><i class="fas fa-search"></i></label>

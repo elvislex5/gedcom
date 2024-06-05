@@ -21,3 +21,6 @@ class DocumentForm(forms.ModelForm):
         fields = ['name', 'file', 'directory']
 
     directory = forms.ModelChoiceField(queryset=Directory.objects.all(), required=True)
+
+from django import forms
+
