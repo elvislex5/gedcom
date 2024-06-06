@@ -5,33 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b3cd8a-857c-43aa-bb28-c2ed1b0aae69" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/ged/migrations/0011_remove_document_file_size_archivedocument_directory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/restore.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ged/templates/ged/resultat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/documents/Logistique_3A-23-24_CFsPGh9.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/documents/Logistique_3A-23-24_Llw7A14.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/documents/Logistique_3A-23-24_b9nPCch.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/documents/exemples_-ch-II-kuziack-_king_VjVDuLv.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/migrations/0010_remove_archivedocument_uploaded_at.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/migrations/0010_remove_archivedocument_uploaded_at.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/static/ged/css/style-liberty.css" beforeDir="false" afterPath="$PROJECT_DIR$/ged/static/ged/css/style-liberty.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/templates/ged/archives.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/archives.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/templates/ged/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/templates/ged/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/directory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/templates/ged/document.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/document.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/templates/ged/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/ged/templates/ged/statistics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ged/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ged/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style-liberty.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style-liberty.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Pull.Settings">
     <option name="OPTIONS">
@@ -67,23 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Attach to Node.js/Chrome.gedcom.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/elvis/PycharmProjects/gedcom/ged/static/ged/js&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Attach to Node.js/Chrome.gedcom.executor": "Debug",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/elvis/protech",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\elvis\PycharmProjects\gedcom\ged\static\ged\js" />
